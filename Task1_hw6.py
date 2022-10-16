@@ -12,23 +12,23 @@
 #     # print(myList)
 #     return myList
 
-def sumOddPositions (list):
-    positionList = []
-    sum = 0
-    for i in range(len(list)):
-        # print (i)
-        if (i % 2 != 0):
-            sum += list[i]
-            positionList.append(list[i])
-    # print (positionList)
-    print (f'{list_res} -> на нечётных позициях {positionList}, ответ: {sum}')
+# def sumOddPositions (list):
+#     positionList = []
+#     sum = 0
+#     for i in range(len(list)):
+#         # print (i)
+#         if (i % 2 != 0):
+#             sum += list[i]
+#             positionList.append(list[i])
+#     # print (positionList)
+#     print (f'{list_res} -> на нечётных позициях {positionList}, ответ: {sum}')
 
 import random
 
-list_res = [random.randint(0 , 10) for i in range(int(input("Введите количество элементов списка: ")))] 
+list_res = list(map(lambda x: x[1] if x[0] % 2 else 0, list(enumerate(myList := [random.randint(0 , 10) for i in range(int(input("Введите количество элементов списка: ")))]))))
 
 # number = int (input("Введите количество элементов списка: "))
 # list_res = myList (number)  
 print (list_res)  
-sumOddPositions (list_res)
+print (sum(list_res))
 
